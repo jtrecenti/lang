@@ -160,9 +160,6 @@ rd_comment_translate <- function(x, lang, rs) {
       last_char <- substr(rd_char, nchar(rd_char), nchar(rd_char))
       n_char <- ifelse(last_char == "\n", 1, 0)
       rd_char <- substr(rd_char, 3, nchar(rd_char) - n_char)
-      rd_char <- rs$run(
-        function(x, language) 
-      )
       rd_char <- mall::llm_vec_translate(x = rd_char, language = lang)
       rd_char <- paste0("# ", rd_char, "\n")
     } else {
